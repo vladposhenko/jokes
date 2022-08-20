@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.jokes {
+    padding-top: 40px;
+}
+
+ul {
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+
+.logo { 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 78px;
+}
+
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #333333;
+}
+
+.description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #333333;
+}
+
+.jokes {
+    width: 65%;
+}
+
+.favourite {
+    background: #F8F8F8;
+    width: 35%;
+}
+
+.radio-toolbar {
+    display: none;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+    display: inline-block;
+    gap: 10px;
+    row-gap: 10px;
+	cursor: pointer;
+	padding: 6px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+    text-transform: uppercase;
+    border: 2px solid #F8F8F8;
+    transition: all ease .5s;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ABABAB;
+    letter-spacing: 2px;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    border: 2px solid #F8F8F8;
+    color: #333333;
+    background: #F8F8F8;
+    transition: all ease .5s;
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+    transition: all ease .5s;
+	color: #666;
+    background: #F8F8F8;
+}
+ 
+/* Disabled */
+.form_radio_btn input[type=radio]:disabled + label {
+    transition: all ease .5s;
+	background: #efefef;
+	color: #666;
+}
+
+
+.categories__group {
+    display: none;
+}
+
+.search__input {
+    display: none;
+}
+
+
+.send__btn {
+    background: linear-gradient(90.55deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+    padding: 10px 40px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Roboto';
+    border: none;
+    cursor: pointer;
+}
+
+
+.option__choose {
+    margin-bottom: 20px;
+}
+
+.jokes__list {
+    margin-top: 40px;
+    height: 520px;
+    overflow-y: scroll;
+    
+}
+
+.jokes__list::-webkit-scrollbar { width: 0px;}
+
+.jokes__card  {
+    background: #F8F8F8;
+    border-radius: 20px;
+    padding: 65px 40px;
+    max-width: 680px;
+}
+
+.jokes__card + .jokes__card {
+    margin-top: 20px;
+}
+
+.jokes__card {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.like {
+    position: absolute;
+    right: 53px;
+    top: 36px;
+    cursor: pointer;
+}
+
+.favourite {
+    padding: 40px;
+}
+
+
+.favourite h2 {
+    color: #ABABAB;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.favourite__jokes .jokes__card {
+    background-color: #fff;
+    border: 1px solid #F8F8F8;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+.message__img {
+    width: 40px;
+    height: 40px;
+}
