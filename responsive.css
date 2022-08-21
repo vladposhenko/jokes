@@ -2,18 +2,24 @@
 
     .favourite {
         position: absolute;
-        right: -60%;
+        left: -100%;
         transition: all ease-out 1s;
+        /* display: none; */
     }
 
     .favourite__mobile {
         transform: translateX(0);
-        right: 0;
+        left: 0;
         width: 68%;
+        height: 156%;
     }
 
     .favourite__mobile h2 {
         display: none;
+    }
+
+    .jokes {
+        padding-bottom: 0;
     }
 
     .dark__theme {
