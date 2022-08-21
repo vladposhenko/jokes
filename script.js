@@ -3,6 +3,15 @@ const form = document.getElementById("jokesForm")
 const searchInput = document.getElementById('searchInput')
 const jokes = document.querySelector(".jokes__list")
 const favJokes = document.getElementById('favJokes')
+const asideBtn = document.getElementById('asideBtn')
+const favSection = document.getElementById('favSection')
+const dark = document.getElementById('dark')
+
+asideBtn.addEventListener('click', () => {
+    favSection.classList.toggle('favourite__mobile')
+    dark.classList.toggle('dark__theme')
+    asideBtn.classList.toggle('opened')
+})
 
 // Запрос по категориям + вывод категорий в HTML
 fetch('https://api.chucknorris.io/jokes/categories')
@@ -39,38 +48,51 @@ function createElements () {
 // Функция которая создает новые карточки и вставляет их в контейнер
 function createCard (data, container) {
     const card = document.createElement('div')
+    const jokesContainer = document.createElement('div');
+    const infoContainer = document.createElement('div')
     const jokesText = document.createElement('p')
     const heart = document.createElement('img')
     const message = document.createElement('img')
     const id = document.createElement('a')
-
     const update = document.createElement('p')
+
+
+    
+
+
     update.innerText = ` Last update: ${data.updated_at.split(" ")[0]}`
     update.classList.add("jokes__update")
+    infoContainer.append(update)
 
-    id.innerHTML = data.id;
-    id.href = ""
+    id.innerHTML = `ID: ${data.id}`;
+    id.href = "#"
     message.src = 'images/message.png'
     message.classList.add('message__img')
     card.classList.add("jokes__card")
     heart.classList.add("like")
 
+
     data.favourite = checkFavListJokes(data.id)
     heart.src = !data.favourite ? 'images/Vector.svg' : 'images/heart.svg'
     jokesText.innerText = data.value
-    
-    card.append(message)
+    jokesText.classList.add('joke__text')
+    infoContainer.classList.add('jokes__info-container')
+
+    jokesContainer.append(id)
+    jokesContainer.append(jokesText)
+    jokesContainer.classList.add('jokes__body')
+    jokesContainer.append(infoContainer)
+
     card.append(heart)
-    card.append(id)
-    card.append(jokesText)
-    card.append(update)
+    card.append(message)
+    card.append(jokesContainer)
     container.append(card)
 
     if(data.categories.length) {
         const category = document.createElement('p')
         category.innerText = data.categories
         category.classList.add("jokes__category")
-        card.append(category)
+        infoContainer.append(category)
     }
 
     // Отслеживание клика на сердечко
@@ -183,6 +205,8 @@ function removeFromLocalStorage(id) {
     favJokes.innerHTML = "";
     renderFavToStorage();
 }
+
+
 
 
 renderFavToStorage()

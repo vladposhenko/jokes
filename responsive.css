@@ -1,0 +1,94 @@
+@media (max-width:1020px) {
+    .favourite {
+        position: absolute;
+        right: -50%;
+        transition: all ease-out 1s;
+    }
+
+    .favourite__mobile {
+        right: 0;
+        width: 68%;
+    }
+
+    .favourite__mobile h2 {
+        display: none;
+    }
+
+    .dark__theme {
+        display: block;
+        position: absolute;
+        transition: all ease 1.5s;
+        width: 100%;
+        height: 116%;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .favourite__mobile .favourite__jokes {
+        margin-top: 50px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .jokes {
+        width: 100%;
+    }
+
+    .open__aside {
+        display: flex;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        gap: 10px;
+        align-items: center;
+        z-index: 5;
+    }
+
+    .burger {
+        background: #333333;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .burger span:first-child {
+        position: absolute;
+        width: 14px;
+        height: 2px;
+        background: #FFFFFF;
+        border-radius: 2px; 
+        top: 10px;
+        left: 7px;
+        transition: all easet 0.5s;
+    }
+
+    .burger span:nth-child(2) {
+        position: absolute;
+        width: 14px;
+        height: 2px;
+        background: #FFFFFF;
+        border-radius: 2px; 
+        top: 14px;
+        left: 7px;
+        transition: all ease 0.5s;
+    }
+
+    .open__aside.opened .burger span:first-child {
+        transform: rotate(45deg);
+        top: 13px;
+    }
+
+    .open__aside.opened .burger span:nth-child(2){
+        transform: rotate(-45deg);
+        top: 13px;
+    }
+}
+
+
+@media (max-width:540px) {
+    .favourite__mobile {
+        width: 100%;
+    }
+}

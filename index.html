@@ -5,47 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <div class="root">
-        <div class="wrapper">
-                <section class="jokes">
-                    <div class="container">
-                        <p class="logo">MSI 2022</p>
-                        <h1 class="title">Hey!</h1>
-                        <h5 class="description">Let’s try to find a joke for you:</h5>
-                        <form id="jokesForm" action="">
-                            <div class="option__choose">
-                                <label class="random__label">
-                                    <input name="jokesField" class="random__input"  value="random" type="radio" checked> Random
-                                </label>
-                                <label>
-                                    <input name="jokesField" value="categories" type="radio"> From caterogies
-                                </label>
-                                <label>
-                                    <input name="jokesField" value="search" type="radio"> Search
-                                </label>
+        <div class="" id="dark">
+            <div class="open__aside" id="asideBtn">
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Favourite</span>
+            </div>
+            <div class="wrapper" id="wrapper">
+                    <section class="jokes">
+                        <div class="container">
+                            <p class="logo">MSI 2022</p>
+                            <h1 class="title">Hey!</h1>
+                            <h5 class="description">Let’s try to find a joke for you:</h5>
+                            <form id="jokesForm" action="">
+                                <div class="option__choose">
+                                    <div class="custom-radio">
+                                        <label>
+                                            <input type="radio" name="jokesField" value="random" checked>
+                                            <div class="custom-radio__label">
+                                                <strong>Random</strong>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="clear"></div>
+                                    
+                                    <div class="custom-radio">
+                                        <label>
+                                            <input type="radio" name="jokesField" value="categories">
+                                            <div class="custom-radio__label">
+                                                <strong>From caterogies</strong>
+                                            </div>
+                                        </label>
+                                    </div>
+    
+                                    <ul class="radio-toolbar" id="btnGroup">
+                                    </ul>
+    
+                                    <div class="custom-radio">
+                                        <label>
+                                            <input type="radio" name="jokesField" value="search">
+                                            <div class="custom-radio__label">
+                                                <strong>Search</strong>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <br>
+                                <input class="search__input"  placeholder="Free text search..." type="text" id="searchInput">
+                                <button class="send__btn" type="submit">Get a joke</button>
+                            </form>
+                            <div class="jokes__list">
+        
                             </div>
-                            <ul class="radio-toolbar" id="btnGroup">
-                            </ul>
-                            <br>
-                            <input class="search__input" type="text" id="searchInput">
-                            <button class="send__btn" type="submit">Get a joke</button>
-                        </form>
-                        <div class="jokes__list">
-    
                         </div>
-                    </div>
-                </section>
-                <aside class="favourite">
-                    <!-- <div class="container"> -->
-                        <h2>Favourite</h2>
-                        <ul class="favourite__jokes" id="favJokes">
-    
-                        </ul>
-                    <!-- </div> -->
-                </aside> 
+                    </section>
+                    <aside class="favourite" id="favSection">
+                        <!-- <div class="container"> -->
+                            <h2>Favourite</h2>
+                            <ul class="favourite__jokes" id="favJokes">
+        
+                            </ul>
+                        <!-- </div> -->
+                    </aside> 
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
