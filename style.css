@@ -388,7 +388,17 @@ color: #333333;
 }
 
 
+.delte__list {
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+}
 
+.action__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .open__aside {
     display: none;

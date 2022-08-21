@@ -6,11 +6,16 @@ const favJokes = document.getElementById('favJokes')
 const asideBtn = document.getElementById('asideBtn')
 const favSection = document.getElementById('favSection')
 const dark = document.getElementById('dark')
+const deleteJokesBtn = document.getElementById('deleteJokesBtn')
 
 asideBtn.addEventListener('click', () => {
     favSection.classList.toggle('favourite__mobile')
     dark.classList.toggle('dark__theme')
     asideBtn.classList.toggle('opened')
+})
+
+deleteJokesBtn.addEventListener('click', () => {
+    jokes.innerHTML = ''
 })
 
 // Запрос по категориям + вывод категорий в HTML
