@@ -32,12 +32,24 @@ form.addEventListener('change', (e) => {
 })
 
 
+function createElements () {
+
+}
+
 // Функция которая создает новые карточки и вставляет их в контейнер
 function createCard (data, container) {
     const card = document.createElement('div')
     const jokesText = document.createElement('p')
     const heart = document.createElement('img')
     const message = document.createElement('img')
+    const id = document.createElement('a')
+
+    const update = document.createElement('p')
+    update.innerText = ` Last update: ${data.updated_at.split(" ")[0]}`
+    update.classList.add("jokes__update")
+
+    id.innerHTML = data.id;
+    id.href = ""
     message.src = 'images/message.png'
     message.classList.add('message__img')
     card.classList.add("jokes__card")
@@ -47,15 +59,23 @@ function createCard (data, container) {
     heart.src = !data.favourite ? 'images/Vector.svg' : 'images/heart.svg'
     jokesText.innerText = data.value
     
-
     card.append(message)
     card.append(heart)
+    card.append(id)
     card.append(jokesText)
+    card.append(update)
     container.append(card)
+
+    if(data.categories.length) {
+        const category = document.createElement('p')
+        category.innerText = data.categories
+        category.classList.add("jokes__category")
+        card.append(category)
+    }
 
     // Отслеживание клика на сердечко
     heart.addEventListener('click' , (e) => {
-        // debugger;
+
         data.favourite = checkFavListJokes(data.id)
         if(data.favourite) {
             removeFromLocalStorage(data.id);
@@ -131,7 +151,6 @@ function isJokesInLocalStorage () {
 
 
 function checkFavListJokes (id) {
-    debugger;
     let jokes = isJokesInLocalStorage()
     if(jokes){
         return jokes.some((favJoke) => favJoke.id === id)

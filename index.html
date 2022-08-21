@@ -10,38 +10,42 @@
 <body>
     <div class="root">
         <div class="wrapper">
-            <div class="container">
                 <section class="jokes">
-                    <p class="logo">MSI 2022</p>
-                    <h1 class="title">Hey!</h1>
-                    <h5 class="description">Let’s try to find a joke for you:</h5>
-                    <form id="jokesForm" action="">
-                        <div class="option__choose">
-                            <label class="random__label">
-                                <input name="jokesField" class="random__input"  value="random" type="radio" checked> Random
-                            </label>
-                            <label>
-                                <input name="jokesField" value="categories" type="radio"> From caterogies
-                            </label>
-                            <label>
-                                <input name="jokesField" value="search" type="radio"> Search
-                            </label>
+                    <div class="container">
+                        <p class="logo">MSI 2022</p>
+                        <h1 class="title">Hey!</h1>
+                        <h5 class="description">Let’s try to find a joke for you:</h5>
+                        <form id="jokesForm" action="">
+                            <div class="option__choose">
+                                <label class="random__label">
+                                    <input name="jokesField" class="random__input"  value="random" type="radio" checked> Random
+                                </label>
+                                <label>
+                                    <input name="jokesField" value="categories" type="radio"> From caterogies
+                                </label>
+                                <label>
+                                    <input name="jokesField" value="search" type="radio"> Search
+                                </label>
+                            </div>
+                            <ul class="radio-toolbar" id="btnGroup">
+                            </ul>
+                            <br>
+                            <input class="search__input" type="text" id="searchInput">
+                            <button class="send__btn" type="submit">Get a joke</button>
+                        </form>
+                        <div class="jokes__list">
+    
                         </div>
-                        <ul class="radio-toolbar" id="btnGroup">
-                        </ul>
-                        <br>
-                        <input class="search__input" type="text" id="searchInput">
-                        <button class="send__btn" type="submit">Get a joke</button>
-                    </form>
-                    <div class="jokes__list">
-
                     </div>
                 </section>
                 <aside class="favourite">
-                    <h2>Favourite</h2>
-                    <ul class="favourite__jokes" id="favJokes"></ul>
-                </aside>
-            </div>  
+                    <!-- <div class="container"> -->
+                        <h2>Favourite</h2>
+                        <ul class="favourite__jokes" id="favJokes">
+    
+                        </ul>
+                    <!-- </div> -->
+                </aside> 
         </div>
     </div>
     <script src="script.js"></script>

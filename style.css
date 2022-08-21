@@ -22,11 +22,15 @@ ul {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+
+.wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
@@ -175,6 +179,7 @@ ul {
     position: relative;
     display: flex;
     gap: 20px;
+    flex-direction: column;
 }
 
 .like {
@@ -198,6 +203,13 @@ ul {
     line-height: 28px;
 }
 
+.favourite__jokes::-webkit-scrollbar { width: 0px;}
+
+.favourite__jokes {
+    overflow-y: scroll;
+    height: 900px;
+}
+
 .favourite__jokes .jokes__card {
     background-color: #fff;
     border: 1px solid #F8F8F8;
@@ -209,4 +221,30 @@ ul {
 .message__img {
     width: 40px;
     height: 40px;
+}
+
+.jokes__update {
+    color: #ABABAB;
+}
+
+.jokes__category {
+    padding: 6px 20px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    max-width: 94px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    /* or 140% */
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #333333;
+}
+
+.favourite__jokes .jokes__category {
+    background: #F8F8F8;   
 }
