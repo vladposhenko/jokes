@@ -1,11 +1,13 @@
 @media (max-width:1020px) {
+
     .favourite {
         position: absolute;
-        right: -50%;
+        right: -60%;
         transition: all ease-out 1s;
     }
 
     .favourite__mobile {
+        transform: translateX(0);
         right: 0;
         width: 68%;
     }

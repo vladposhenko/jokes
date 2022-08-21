@@ -36,6 +36,8 @@ ul {
     display: flex;
     justify-content: space-between;
     transition: all ease 1.s;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 .container {
